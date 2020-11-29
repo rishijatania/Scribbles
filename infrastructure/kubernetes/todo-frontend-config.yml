@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-frontend-config
+data:
+  REACT_APP_WEBAPP_URL: "/gettodo"
+  REACT_APP_MIDDLEWARE_URL: "/notes"

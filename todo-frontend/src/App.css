@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+  color: #61dafb;
+  background: #2d2d2d;
+}
+
+h1 {
+  margin: 20px 0 15px 0;
+}
+
+#main {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding:0px
+}
+
+ul > li:hover {
+  background-color: #30475e;
+  color: white;
+}
+
+.undone {
+  color: #61dafb;
+}
+
+.icon {
+  margin: 6px 10px 6px 0;
+}
+input {
+	color: white;
+}
+span {
+	padding: 10px;
+}

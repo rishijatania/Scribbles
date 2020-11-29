@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-middleware
+  labels:
+    app: todo-middleware
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-middleware
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: todo-middleware
+    spec:
+      containers:
+        - name: todo-middleware
+          image: rishijatania/todo-middleware
+          imagePullPolicy: Always
+          env:
+            - name: REDIS_HOST
+              value: "todo-redis"
+            - name: WEBAPP_URL
+              value: "http://todo-backend:8080"
+          ports:
+            - containerPort: 5000
